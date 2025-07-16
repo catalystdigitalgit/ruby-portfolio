@@ -33,13 +33,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-surface-secondary">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
             What Clients Say
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Testimonials from partners who've experienced the impact of thoughtful design and development.
           </p>
         </div>
@@ -48,28 +48,28 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative"
+              className="bg-surface-primary p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative"
             >
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-blue-100" />
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-accent-light/30" />
               
               <div className="flex items-center gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, index) => (
-                  <Star key={index} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={index} className="w-5 h-5 fill-warning text-warning" />
                 ))}
               </div>
               
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <p className="text-text-secondary mb-8 leading-relaxed">
                 "{testimonial.content}"
               </p>
               
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-slate-200 rounded-full overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500"></div>
+                <div className="w-12 h-12 bg-surface-elevated rounded-full overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-gradient-from to-gradient-to"></div>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900">{testimonial.name}</p>
-                  <p className="text-sm text-slate-600">{testimonial.role}</p>
-                  <p className="text-sm font-medium text-blue-600">{testimonial.company}</p>
+                  <p className="font-semibold text-text-primary">{testimonial.name}</p>
+                  <p className="text-sm text-text-secondary">{testimonial.role}</p>
+                  <p className="text-sm font-medium text-accent">{testimonial.company}</p>
                 </div>
               </div>
             </div>

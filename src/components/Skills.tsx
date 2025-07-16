@@ -42,22 +42,22 @@ const Skills = () => {
   ];
 
   const colorMap = {
-    blue: "bg-blue-100 text-blue-600",
-    purple: "bg-purple-100 text-purple-600",
-    green: "bg-green-100 text-green-600",
-    orange: "bg-orange-100 text-orange-600",
-    slate: "bg-slate-100 text-slate-600",
-    pink: "bg-pink-100 text-pink-600"
+    blue: "bg-accent/10 text-accent",
+    purple: "bg-gradient-via/10 text-gradient-via",
+    green: "bg-success/10 text-success",
+    orange: "bg-warning/10 text-warning",
+    slate: "bg-text-muted/10 text-text-muted",
+    pink: "bg-gradient-to/10 text-gradient-to"
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-surface-secondary">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
             Skills & Technologies
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             A comprehensive toolkit for creating exceptional digital experiences.
           </p>
         </div>
@@ -66,13 +66,13 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="group p-8 border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group p-8 bg-surface-primary border border-surface-elevated rounded-2xl hover:border-accent-light hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${colorMap[category.color as keyof typeof colorMap]}`}>
                   <category.icon size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl font-semibold text-text-primary">
                   {category.title}
                 </h3>
               </div>
@@ -81,7 +81,7 @@ const Skills = () => {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-sm font-medium text-slate-600 bg-slate-50 px-3 py-1 rounded-full hover:bg-slate-100 transition-colors"
+                    className="text-sm font-medium text-text-secondary bg-surface-elevated px-3 py-1 rounded-full hover:bg-accent-light/20 transition-colors"
                   >
                     {skill}
                   </span>
@@ -93,7 +93,7 @@ const Skills = () => {
 
         {/* Experience Timeline */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+          <h3 className="text-2xl font-bold text-text-primary mb-8 text-center">
             Professional Journey
           </h3>
           <div className="max-w-4xl mx-auto">

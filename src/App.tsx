@@ -1,7 +1,5 @@
-import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Projects from './components/Projects';
 import About from './components/About';
 import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
@@ -10,12 +8,11 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-secondary-light dark:bg-secondary-dark transition-colors duration-300">
       <Header />
       <Hero />
-      <Projects />
-      <About />
       <Skills />
+      <About />
       <Testimonials />
       <Contact />
       <Footer />

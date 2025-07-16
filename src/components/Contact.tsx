@@ -49,13 +49,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-surface-primary">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
             Let's Work Together
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Ready to bring your next project to life? I'd love to hear about your goals and explore how we can create something amazing together.
           </p>
         </div>
@@ -66,7 +66,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
                     Name *
                   </label>
                   <input
@@ -75,16 +75,16 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      errors.name ? 'border-red-500' : 'border-slate-300'
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
+                      errors.name ? 'border-danger' : 'border-surface-elevated'
                     }`}
                     placeholder="Your full name"
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                  {errors.name && <p className="text-danger text-sm mt-1">{errors.name}</p>}
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
                     Email *
                   </label>
                   <input
@@ -93,17 +93,17 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      errors.email ? 'border-red-500' : 'border-slate-300'
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
+                      errors.email ? 'border-danger' : 'border-surface-elevated'
                     }`}
                     placeholder="your@email.com"
                   />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-danger text-sm mt-1">{errors.email}</p>}
                 </div>
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-text-primary mb-2">
                   Subject *
                 </label>
                 <input
@@ -112,16 +112,16 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.subject ? 'border-red-500' : 'border-slate-300'
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
+                    errors.subject ? 'border-danger' : 'border-surface-elevated'
                   }`}
                   placeholder="What would you like to discuss?"
                 />
-                {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
+                {errors.subject && <p className="text-danger text-sm mt-1">{errors.subject}</p>}
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
                   Message *
                 </label>
                 <textarea
@@ -130,18 +130,18 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none ${
-                    errors.message ? 'border-red-500' : 'border-slate-300'
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none ${
+                    errors.message ? 'border-danger' : 'border-surface-elevated'
                   }`}
                   placeholder="Tell me about your project..."
                 />
-                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+                {errors.message && <p className="text-danger text-sm mt-1">{errors.message}</p>}
               </div>
               
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-slate-900 text-white py-4 px-6 rounded-lg font-medium hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-accent to-accent-dark text-white py-4 px-6 rounded-lg font-medium hover:from-accent-dark hover:to-accent transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
@@ -161,35 +161,35 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-text-primary mb-6">Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Mail size={20} className="text-blue-600" />
+                  <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                    <Mail size={20} className="text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Email</p>
-                    <p className="text-slate-600">hello@yourname.com</p>
+                    <p className="font-medium text-text-primary">Email</p>
+                    <p className="text-text-secondary">hello@yourname.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <Phone size={20} className="text-green-600" />
+                  <div className="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center">
+                    <Phone size={20} className="text-success" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Phone</p>
-                    <p className="text-slate-600">+1 (555) 123-4567</p>
+                    <p className="font-medium text-text-primary">Phone</p>
+                    <p className="text-text-secondary">+1 (555) 123-4567</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <MapPin size={20} className="text-purple-600" />
+                  <div className="w-10 h-10 bg-gradient-via/10 rounded-full flex items-center justify-center">
+                    <MapPin size={20} className="text-gradient-via" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Location</p>
-                    <p className="text-slate-600">Available Globally</p>
+                    <p className="font-medium text-text-primary">Location</p>
+                    <p className="text-text-secondary">Available Globally</p>
                   </div>
                 </div>
               </div>
