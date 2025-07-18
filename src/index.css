@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 70 67 66; /* #464342 in RGB */
+  }
+  
+  .dark {
+    --color-primary: 240 240 240; /* #F0F0F0 in RGB */
+  }
+}
+
 /* Custom animations */
 @keyframes fade-in {
   from {

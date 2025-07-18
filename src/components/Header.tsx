@@ -55,13 +55,13 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-              isScrolled ? 'bg-secondary-light/80 dark:bg-secondary-dark/80 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+              isScrolled ? 'backdrop-blur-sm shadow-sm' : ''
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button 
             onClick={scrollToTop}
-            className="text-xl font-bold text-text-primary-light dark:text-text-primary-dark hover:text-text-secondary-light dark:hover:text-text-secondary-dark transition-colors duration-200"
+            className="text-xl font-bold text-primary transition-colors duration-200"
           >
             Ruby Doyle
           </button>
@@ -81,7 +81,7 @@ const Header = () => {
 
             <button
               onClick={toggleDarkMode}
-              className={`relative w-16 h-8 rounded-full transition-all duration-300 ${
+              className={`relative w-16 h-8 rounded-full transition-all duration-300 border border-stone-300 dark:border-stone-500 ${
                 isDarkMode 
                   ? 'bg-gradient-to-r from-indigo-900 to-purple-900' 
                   : 'bg-gradient-to-r from-sky-300 to-blue-400'
@@ -91,7 +91,7 @@ const Header = () => {
               <div className={`absolute top-1 w-6 h-6 rounded-fullshadow-md transition-all duration-300 flex items-center justify-center ${
                 isDarkMode ? 'translate-x-8' : 'translate-x-1'
               }`}>
-                {isDarkMode ? <span>🌞</span> : <span>🌝</span>}
+                {isDarkMode ? <span>🌝</span> : <span>🌞</span>}
               </div>
             </button>
 
@@ -113,7 +113,7 @@ const Header = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200 text-left"
+                  className="text-text-primary transition-colors duration-200 text-left"
                 >
                   {item}
                 </button>
