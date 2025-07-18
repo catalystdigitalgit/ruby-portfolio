@@ -25,13 +25,13 @@ const Button = ({
   const getVariantStyles = () => {
     switch (variant) {
       case 'primary':
-        return 'bg-stone-900 dark:bg-stone-100/75 text-stone-100 dark:text-stone-900 hover:shadow-lg';
+        return 'bg-stone-800 dark:bg-stone-100/75 text-stone-100 dark:text-stone-800 hover:shadow-lg';
       case 'secondary':
-        return 'border border-stone-300/50 dark:border-stone-500 text-stone-900 dark:text-stone-100 hover:border-stone-400 dark:hover:border-stone-400 hover:shadow-md';
+        return 'border border-neutral/50 text-stone-800 dark:text-stone-100 hover:border-stone-400 dark:hover:border-stone-400 hover:shadow-md';
       case 'accent':
-        return 'bg-stone-100/40 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100';
+        return 'bg-stone-100/40 dark:bg-stone-800 hover:bg-feature/15 text-stone-600 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100';
       default:
-        return 'bg-stone-900 dark:bg-stone-100/75 text-stone-100 dark:text-stone-900 hover:shadow-lg';
+        return 'bg-stone-800 dark:bg-stone-100/75 text-stone-100 dark:text-stone-800 hover:shadow-lg';
     }
   };
 

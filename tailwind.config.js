@@ -4,16 +4,15 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        'shrikhand': ['Shrikhand', 'cursive'],
+      },
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
-        feature: {
-          light: '#FC605C',
-          dark: '#E39491',
-        },
-        secondary: {
-          light: '#fcfcfc',
-          dark: '#343434',
-        },
+        neutral: 'rgb(var(--color-neutral) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+        feature: 'rgb(var(--color-feature) / <alpha-value>)',
+        link: '#3B82F6',
         gradient: {
           from: {
             light: '#FC605C',

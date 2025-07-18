@@ -8,7 +8,7 @@ const Hero = () => {
     <section 
       className="min-h-screen flex items-center justify-center bg-cover bg-bottom bg-no-repeat transition-all duration-300 bg-[url('/images/desktop-bg-light.svg')] dark:bg-[url('/images/desktop-bg.svg')]"
     >
-      <div className="max-w-4xl mx-auto px-4 text-center -mt-56">
+      <div className="max-w-4xl mx-auto px-4 text-center -mt-60">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 bg-emerald-100 dark:bg-emerald-700/20 text-emerald-700 dark:text-emerald-400 px-3 py-1.5 rounded-full text-sm font-medium">
             <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>

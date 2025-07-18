@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Typography from './Typography';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,40 +56,44 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-              isScrolled ? 'backdrop-blur-sm shadow-sm' : ''
+              isScrolled || isMenuOpen ? 'backdrop-blur-sm shadow-sm bg-secondary/80' : ''
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button 
             onClick={scrollToTop}
-            className="text-xl font-bold text-primary transition-colors duration-200"
+            className="transition-colors duration-200"
           >
-            Ruby Doyle
+            <Typography variant="subheading" emphasis="high">
+              Ruby Doyle
+            </Typography>
           </button>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-8">
             <nav className="hidden md:flex space-x-8">
               {['Work', 'About', 'Skills', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200 text-sm font-medium"
+                  className="text-primary/70 hover:text-primary transition-colors duration-200"
                 >
-                  {item}
+                  <Typography variant="body" emphasis="medium">
+                    {item}
+                  </Typography>
                 </button>
               ))}
             </nav>
 
             <button
               onClick={toggleDarkMode}
-              className={`relative w-16 h-8 rounded-full transition-all duration-300 border border-stone-300 dark:border-stone-500 ${
+              className={`relative w-16 h-8 rounded-full transition-all duration-300 border border-neutral/50 ${
                 isDarkMode 
                   ? 'bg-gradient-to-r from-indigo-900 to-purple-900' 
                   : 'bg-gradient-to-r from-sky-300 to-blue-400'
               }`}
               aria-label="Toggle dark mode"
             >
-              <div className={`absolute top-1 w-6 h-6 rounded-fullshadow-md transition-all duration-300 flex items-center justify-center ${
+              <div className={`absolute top-1 w-6 h-6 rounded-full transition-all duration-300 flex items-center justify-center ${
                 isDarkMode ? 'translate-x-8' : 'translate-x-1'
               }`}>
                 {isDarkMode ? <span>🌝</span> : <span>🌞</span>}
@@ -97,31 +102,33 @@ const Header = () => {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors"
+              className="md:hidden p-2 text-primary/70 hover:text-primary transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
-
-        <nav className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="border-t border-surface-elevated-light dark:border-surface-elevated-dark mt-4">
-            <div className="flex flex-col space-y-3 mt-4 pb-4">
-              {['Work', 'About', 'Skills', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-text-primary transition-colors duration-200 text-left"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-        </nav>
       </div>
+
+      <nav className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        isMenuOpen ? 'opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+                      <div className="border-t border-neutral/20 bg-secondary/80 backdrop-blur-sm">
+          <div className="flex flex-col space-y-3 py-4 px-6">
+            {['Work', 'About', 'Skills', 'Contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className="transition-all duration-200 text-left rounded-xl p-3 hover:bg-feature/15 hover:text-stone-900 dark:hover:text-stone-100 hover:scale-102"
+              >
+                <Typography variant="body" emphasis="high">
+                  {item}
+                </Typography>
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
     </header>
   );
 };

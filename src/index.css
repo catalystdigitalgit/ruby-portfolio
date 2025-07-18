@@ -4,11 +4,21 @@
 
 @layer base {
   :root {
-    --color-primary: 70 67 66; /* #464342 in RGB */
+    --color-primary: 70 67 66;
+    --color-neutral: 214 211 209;
+    --color-secondary: 252 252 252;
+    --color-feature: 252 96 92;
   }
   
   .dark {
-    --color-primary: 240 240 240; /* #F0F0F0 in RGB */
+    --color-primary: 240 240 240;
+    --color-neutral: 120 113 108;
+    --color-secondary: 52 52 52;
+    --color-feature: 227 148 145;
+  }
+
+  body {
+    color: rgb(var(--color-primary));
   }
 }
 
