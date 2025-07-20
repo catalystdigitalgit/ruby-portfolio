@@ -22,19 +22,19 @@ const Typography = ({
   const getVariantStyles = () => {
     switch (variant) {
       case 'heading':
-        return 'text-4xl md:text-5xl font-bold';
+        return 'text-2xl sm:text-4xl md:text-5xl font-bold';
       case 'heading-2':
-        return 'text-3xl md:text-4xl font-bold';
+        return 'text-xl sm:text-3xl md:text-4xl font-bold';
       case 'subheading':
-        return 'text-lg md:text-xl font-medium';
+        return 'text-base sm:text-lg md:text-xl font-medium';
       case 'body':
-        return 'text-base';
+        return 'text-sm sm:text-base';
       case 'body-bold':
-        return 'text-base font-medium';
+        return 'text-sm sm:text-base font-medium';
       case 'signature':
-        return 'text-xl md:text-2xl font-normal';
+        return 'text-lg sm:text-xl md:text-2xl font-normal';
       default:
-        return 'text-base';
+        return 'text-sm sm:text-base';
     }
   };
 

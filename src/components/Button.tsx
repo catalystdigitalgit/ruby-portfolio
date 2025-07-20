@@ -44,13 +44,21 @@ const Button = ({
 
     switch (size) {
       case 'sm':
-        return isIconOnly ? 'p-2' : 'px-4 py-2 text-sm';
+        return isIconOnly
+          ? 'p-1.5 sm:p-2'
+          : 'px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm';
       case 'default':
-        return isIconOnly ? 'p-2.5' : 'px-6 py-3 text-base';
+        return isIconOnly
+          ? 'p-2 sm:p-2.5'
+          : 'px-4 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base';
       case 'lg':
-        return isIconOnly ? 'p-3' : 'px-8 py-4 text-lg';
+        return isIconOnly
+          ? 'p-2.5 sm:p-3'
+          : 'px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg';
       default:
-        return isIconOnly ? 'p-2.5' : 'px-6 py-3 text-base';
+        return isIconOnly
+          ? 'p-2 sm:p-2.5'
+          : 'px-4 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base';
     }
   };
 
@@ -71,7 +79,7 @@ const Button = ({
   const baseStyles =
     variant === 'accent' && !children
       ? 'group rounded-lg transition-all duration-200 hover:scale-110 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
-      : 'group rounded-xl font-medium transition-all duration-200 hover:scale-105 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
+      : 'group rounded-xl font-medium transition-all duration-200 hover:scale-105 flex items-center gap-1.5 sm:gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
 
   const iconElement = renderIcon();
 

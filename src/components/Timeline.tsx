@@ -98,26 +98,26 @@ const Timeline: React.FC = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-neutral/70 dark:bg-neutral/20"></div>
+          <div className="absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 w-0.5 h-full bg-neutral/70 dark:bg-neutral/20"></div>
 
-          <div className="-space-y-2">
+          <div className="space-y-4 md:-space-y-2">
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                className={`relative flex items-center md:${index % 2 === 0 ? 'justify-start' : 'justify-end'} justify-end`}
                 data-timeline-item
                 data-index={index}
               >
                 <div
-                  className={`absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-feature rounded-full border-3 border-secondary z-10 transition-all duration-500 ${
+                  className={`absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 bg-feature rounded-full border-3 border-secondary z-10 transition-all duration-700 ease-out ${
                     visibleItems.has(index)
-                      ? 'scale-100 opacity-100'
-                      : 'scale-50 opacity-0'
+                      ? 'scale-100 opacity-100 translate-y-0'
+                      : 'scale-50 opacity-0 translate-y-8'
                   }`}
                 ></div>
 
                 <div
-                  className={`w-5/12 ${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6 text-left'} transition-all duration-700 ease-out ${
+                  className={`md:w-5/12 w-5/6 md:${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6 text-left'} pl-2 text-left transition-all duration-700 ease-out ${
                     visibleItems.has(index)
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-8'
@@ -125,7 +125,7 @@ const Timeline: React.FC = () => {
                 >
                   <Card interactive>
                     <div
-                      className={`flex items-center gap-1 mb-1 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
+                      className={`flex items-center gap-1 mb-1 md:${index % 2 === 0 ? 'justify-end' : 'justify-start'} justify-start`}
                     >
                       <Typography
                         variant="body"
@@ -150,7 +150,7 @@ const Timeline: React.FC = () => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`hover:underline text-sm mb-2 flex items-center gap-1 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
+                      className={`hover:underline text-sm mb-2 flex items-center gap-1 md:${index % 2 === 0 ? 'justify-end' : 'justify-start'} justify-start`}
                     >
                       <Typography variant="body-bold" className="text-sm">
                         {item.title}
@@ -158,14 +158,14 @@ const Timeline: React.FC = () => {
                       <Icon name="external-link" size="sm" />
                     </a>
                     <div
-                      className={`mb-2 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}
+                      className={`mb-2 md:${index % 2 === 0 ? 'text-right' : 'text-left'} text-left`}
                     >
                       <Tag size="sm">{item.projectType}</Tag>
                     </div>
                     <Typography
                       variant="body"
                       emphasis="medium"
-                      className={`text-xs ${index % 2 === 0 ? 'text-right' : 'text-left'}`}
+                      className={`text-xs md:${index % 2 === 0 ? 'text-right' : 'text-left'} text-left`}
                     >
                       {item.description}
                     </Typography>
