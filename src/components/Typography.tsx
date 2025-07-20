@@ -1,17 +1,30 @@
 import { ReactNode } from 'react';
 
 interface TypographyProps {
-  variant: 'heading' | 'subheading' | 'body' | 'body-bold' | 'signature';
+  variant:
+    | 'heading'
+    | 'heading-2'
+    | 'subheading'
+    | 'body'
+    | 'body-bold'
+    | 'signature';
   emphasis?: 'high' | 'medium' | 'low';
   children: ReactNode;
   className?: string;
 }
 
-const Typography = ({ variant, emphasis = 'high', children, className = '' }: TypographyProps) => {
+const Typography = ({
+  variant,
+  emphasis = 'high',
+  children,
+  className = '',
+}: TypographyProps) => {
   const getVariantStyles = () => {
     switch (variant) {
       case 'heading':
         return 'text-4xl md:text-5xl font-bold';
+      case 'heading-2':
+        return 'text-3xl md:text-4xl font-bold';
       case 'subheading':
         return 'text-lg md:text-xl font-medium';
       case 'body':
@@ -38,15 +51,22 @@ const Typography = ({ variant, emphasis = 'high', children, className = '' }: Ty
     }
   };
 
-  const Component = variant === 'heading' ? 'h1' : variant === 'subheading' ? 'h2' : 'p';
+  const Component =
+    variant === 'heading' || variant === 'heading-2'
+      ? 'h1'
+      : variant === 'subheading'
+        ? 'h2'
+        : 'p';
 
   const fontFamily = variant === 'signature' ? 'font-shrikhand' : '';
 
   return (
-    <Component className={`${getVariantStyles()} ${getEmphasisStyles()} ${fontFamily} ${className}`}>
+    <Component
+      className={`${getVariantStyles()} ${getEmphasisStyles()} ${fontFamily} ${className}`}
+    >
       {children}
     </Component>
   );
 };
 
-export default Typography; 
+export default Typography;

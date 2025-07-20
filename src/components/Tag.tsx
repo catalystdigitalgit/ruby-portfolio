@@ -1,33 +1,12 @@
 import { ReactNode } from 'react';
 
 interface TagProps {
-  variant?: 'primary' | 'secondary' | 'accent' | 'neutral';
   size?: 'sm' | 'default' | 'lg';
   children: ReactNode;
   className?: string;
 }
 
-const Tag = ({ 
-  variant = 'neutral', 
-  size = 'default', 
-  children, 
-  className = '' 
-}: TagProps) => {
-  const getVariantStyles = () => {
-    switch (variant) {
-      case 'primary':
-        return 'bg-primary/10 text-primary border border-primary/20';
-      case 'secondary':
-        return 'bg-secondary/50 text-primary border border-neutral/20';
-      case 'accent':
-        return 'bg-feature/10 text-feature border border-feature/20';
-      case 'neutral':
-        return 'bg-neutral/20 text-primary border border-neutral/30';
-      default:
-        return 'bg-neutral/20 text-primary border border-neutral/30';
-    }
-  };
-
+const Tag = ({ size = 'default', children, className = '' }: TagProps) => {
   const getSizeStyles = () => {
     switch (size) {
       case 'sm':
@@ -41,13 +20,14 @@ const Tag = ({
     }
   };
 
-  const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200';
+  const baseStyles =
+    'inline-flex items-center justify-center rounded-full font-medium transition-colors duration-200 bg-feature/5 border border-feature/40';
 
   return (
-    <span className={`${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${className}`}>
+    <span className={`${baseStyles} ${getSizeStyles()} ${className}`}>
       {children}
     </span>
   );
 };
 
-export default Tag; 
+export default Tag;

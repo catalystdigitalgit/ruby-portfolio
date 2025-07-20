@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Download, Mail, Github, Linkedin } from 'lucide-react';
+import Icon, { IconName } from './Icon';
 
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'accent';
@@ -8,19 +8,23 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
-  icon?: string;
+  icon?: IconName;
   iconPosition?: 'left' | 'right';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const Button = ({ 
-  variant = 'primary', 
-  size = 'default', 
-  children, 
-  className = '', 
-  onClick, 
-  disabled = false, 
-  icon, 
-  iconPosition = 'left' 
+const Button = ({
+  variant = 'primary',
+  size = 'default',
+  children,
+  className = '',
+  onClick,
+  disabled = false,
+  icon,
+  iconPosition = 'left',
+  href,
+  type = 'button',
 }: ButtonProps) => {
   const getVariantStyles = () => {
     switch (variant) {
@@ -29,7 +33,7 @@ const Button = ({
       case 'secondary':
         return 'border border-neutral/50 text-stone-800 dark:text-stone-100 hover:border-stone-400 dark:hover:border-stone-400 hover:shadow-md';
       case 'accent':
-        return 'bg-stone-100/40 dark:bg-stone-800 hover:bg-feature/15 text-stone-600 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100';
+        return 'bg-feature/15 hover:bg-feature/20 text-primary';
       default:
         return 'bg-stone-800 dark:bg-stone-100/75 text-stone-100 dark:text-stone-800 hover:shadow-lg';
     }
@@ -37,7 +41,7 @@ const Button = ({
 
   const getSizeStyles = () => {
     const isIconOnly = variant === 'accent' && !children;
-    
+
     switch (size) {
       case 'sm':
         return isIconOnly ? 'p-2' : 'px-4 py-2 text-sm';
@@ -52,40 +56,59 @@ const Button = ({
 
   const renderIcon = () => {
     if (!icon) return null;
-    
-    const iconSize = size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5';
-    
-    switch (icon) {
-      case 'download':
-        return <Download className={`${iconSize} group-hover:animate-bounce`} />;
-      case 'mail':
-        return <Mail className={`${iconSize} group-hover:animate-pulse`} />;
-      case 'github':
-        return <Github className={iconSize} />;
-      case 'linkedin':
-        return <Linkedin className={iconSize} />;
-      default:
-        return null;
-    }
+
+    const iconSize = size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md';
+    const animationClass =
+      icon === 'download'
+        ? 'group-hover:animate-bounce'
+        : icon === 'mail'
+          ? 'group-hover:animate-pulse'
+          : '';
+
+    return <Icon name={icon} size={iconSize} className={animationClass} />;
   };
 
-  const baseStyles = variant === 'accent' && !children
-    ? 'group rounded-lg transition-all duration-200 hover:scale-110 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
-    : 'group rounded-xl font-medium transition-all duration-200 hover:scale-105 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
+  const baseStyles =
+    variant === 'accent' && !children
+      ? 'group rounded-lg transition-all duration-200 hover:scale-110 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
+      : 'group rounded-xl font-medium transition-all duration-200 hover:scale-105 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
 
   const iconElement = renderIcon();
 
+  const content = (
+    <>
+      {iconPosition === 'left' && iconElement}
+      {children}
+      {iconPosition === 'right' && iconElement}
+    </>
+  );
+
+  if (href) {
+    const isDownload = icon === 'download' || href.endsWith('.pdf');
+
+    return (
+      <a
+        href={href}
+        {...(isDownload
+          ? { download: true }
+          : { target: '_blank', rel: 'noopener noreferrer' })}
+        className={`${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${className}`}
+      >
+        {content}
+      </a>
+    );
+  }
+
   return (
     <button
+      type={type}
       className={`${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
-      {iconPosition === 'left' && iconElement}
-      {children}
-      {iconPosition === 'right' && iconElement}
+      {content}
     </button>
   );
 };
 
-export default Button; 
+export default Button;

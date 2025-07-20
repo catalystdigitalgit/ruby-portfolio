@@ -3,6 +3,8 @@ import Hero from './components/Hero';
 import Timeline from './components/Timeline';
 import ToolBelt from './components/Toolbelt';
 import RecentWork from './components/RecentWork';
+import Footer from './components/Footer';
+import CodeButton from './components/CodeButton';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Timeline />
       <ToolBelt />
       <RecentWork />
+      <Footer />
+      <CodeButton />
     </div>
   );
 }
