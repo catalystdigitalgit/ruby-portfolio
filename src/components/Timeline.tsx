@@ -33,7 +33,7 @@ const Timeline: React.FC = () => {
       title: 'Frontend Developer at 3S Money',
       projectType: 'Full-time',
       description:
-        'Developed secure fintech applications with React and TypeScript, focusing on payment processing and user authentication systems.',
+        'Led the front-end development efforts for the company’s main website, ensuring high performance, responsiveness, and usability while aligning business and marketing needs.',
       link: 'https://3s.money/',
     },
     {
@@ -41,7 +41,7 @@ const Timeline: React.FC = () => {
       title: 'Launched Dazy Chain',
       projectType: 'Personal Project',
       description:
-        'Created blockchain-based supply chain tracking platform with real-time analytics and smart contract integration.',
+        'Founded a successful digital business while applying front-end development skills to create an engaging e-commerce platform.',
       link: 'https://dazychain.uk',
     },
   ];

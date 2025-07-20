@@ -107,21 +107,21 @@ const RecentWork: React.FC = () => {
 
   const projects = [
     {
-      title: 'AI Chart Summaries',
-      company: 'GEEIQ',
-      description:
-        'Pitched and prototyped AI-generated chart summaries to improve data accessibility, increase platform value and enable adoption for non-technical users.',
-      tech: ['React', 'TypeScript', 'AI Integration'],
-      icon: 'bar-chart' as IconName,
-      link: 'https://geeiq.com',
-    },
-    {
       title: 'Design System Refactor',
       company: 'GEEIQ',
       description:
         'Led comprehensive Storybook refactor with new design system components, establishing consistent UI patterns across the platform.',
       tech: ['Storybook', 'React', 'Design Systems'],
       icon: 'palette' as IconName,
+      link: 'https://geeiq.com',
+    },
+    {
+      title: 'AI Chart Summaries',
+      company: 'GEEIQ',
+      description:
+        'Pitched and prototyped AI-generated chart summaries to improve data accessibility, increase platform value and enable adoption for non-technical users.',
+      tech: ['React', 'TypeScript', 'AI Integration'],
+      icon: 'bar-chart' as IconName,
       link: 'https://geeiq.com',
     },
     {
