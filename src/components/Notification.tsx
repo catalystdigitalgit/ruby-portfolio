@@ -67,7 +67,7 @@ const Notification: React.FC<NotificationProps> = ({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -50, scale: 0.95 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="fixed top-4 right-4 z-50 max-w-sm w-full"
+          className="fixed top-4 right-4 left-4 sm:left-auto z-50 max-w-sm sm:w-full"
         >
           <div
             className={`

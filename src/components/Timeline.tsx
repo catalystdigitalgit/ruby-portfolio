@@ -17,7 +17,6 @@ const Timeline: React.FC = () => {
       description:
         'Leading frontend development for AI-powered analytics platform, implementing modern React patterns and optimizing performance.',
       link: 'https://geeiq.com',
-      hasTooltip: true,
       tooltipText:
         "Leaving GEEIQ earlier than expected to find a fully remote role that allows me to work from New Zealand in order to support my mum as she navigates early-stage Alzheimer's.",
     },
@@ -77,11 +76,11 @@ const Timeline: React.FC = () => {
   }, []);
 
   const renderTooltip = (item: (typeof timelineItems)[0]) => (
-    <div className="absolute z-50 w-64 p-3 bg-secondary border border-neutral/20 rounded-lg shadow-lg left-6 top-1/2 transform -translate-y-1/2">
+    <div className="absolute z-50 w-64 p-3 bg-secondary border border-neutral/20 rounded-lg shadow-lg top-8 transform -translate-x-1/2 md:left-6 md:top-1/2 md:transform md:-translate-y-1/2 md:translate-x-0">
       <Typography variant="body" className="text-xs text-left">
         {item.tooltipText}
       </Typography>
-      <div className="absolute left-0 top-1/2 w-2 h-2 bg-secondary border-l border-b border-neutral/20 transform rotate-45 -translate-x-1 -translate-y-1/2"></div>
+      <div className="absolute top-0 left-1/2 w-2 h-2 bg-secondary border-l border-t border-neutral/20 transform rotate-45 -translate-x-1/2 -translate-y-1 md:left-0 md:top-1/2 md:border-l md:border-b md:border-t-0 md:border-r-0 md:-translate-x-1 md:-translate-y-1/2"></div>
     </div>
   );
 
@@ -98,7 +97,7 @@ const Timeline: React.FC = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 w-0.5 h-full bg-neutral/70 dark:bg-neutral/20"></div>
+          <div className="absolute md:left-1/2 left-4 transform md:-translate-x-1/2 w-0.5 h-full bg-neutral/70 dark:bg-neutral/20"></div>
 
           <div className="space-y-4 md:-space-y-2">
             {timelineItems.map((item, index) => (
@@ -109,7 +108,7 @@ const Timeline: React.FC = () => {
                 data-index={index}
               >
                 <div
-                  className={`absolute left-1/2 md:left-1/2 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 bg-feature rounded-full border-3 border-secondary z-10 transition-all duration-700 ease-out ${
+                  className={`absolute md:left-1/2 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 bg-feature rounded-full border-3 border-secondary z-10 transition-all duration-700 ease-out ${
                     visibleItems.has(index)
                       ? 'scale-100 opacity-100 translate-y-0'
                       : 'scale-50 opacity-0 translate-y-8'
@@ -134,13 +133,17 @@ const Timeline: React.FC = () => {
                       >
                         {item.date}
                       </Typography>
-                      {item.hasTooltip && (
+                      {item.tooltipText && (
                         <div className="relative">
                           <button
                             onMouseEnter={() => setTooltipVisible(true)}
                             onMouseLeave={() => setTooltipVisible(false)}
                           >
-                            <Icon name="info" size="xs" />
+                            <Icon
+                              name="info"
+                              size="xs"
+                              className="text-primary/50"
+                            />
                           </button>
                           {tooltipVisible && renderTooltip(item)}
                         </div>

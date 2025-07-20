@@ -169,15 +169,15 @@ const RecentWork: React.FC = () => {
       icon: 'shopping-cart' as IconName,
       link: 'https://dazychain.uk',
     },
-    {
-      title: 'Social Media Growth',
-      company: 'Dazy Chain',
-      description:
-        'Grew brand organically on TikTok and Instagram through strategic content creation and community engagement.',
-      tech: ['Social Media', 'Content Strategy', 'Growth'],
-      icon: 'users' as IconName,
-      link: 'https://dazychain.uk',
-    },
+    // {
+    //   title: 'Social Media Growth',
+    //   company: 'Dazy Chain',
+    //   description:
+    //     'Grew brand organically on TikTok and Instagram through strategic content creation and community engagement.',
+    //   tech: ['Social Media', 'Content Strategy', 'Growth'],
+    //   icon: 'users' as IconName,
+    //   link: 'https://dazychain.uk',
+    // },
     {
       title: 'Meta Ad Campaigns',
       company: 'Dazy Chain',
