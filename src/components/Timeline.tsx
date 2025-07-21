@@ -103,7 +103,7 @@ const Timeline: React.FC = () => {
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative flex items-center md:${index % 2 === 0 ? 'justify-start' : 'justify-end'} justify-end`}
+                className={`relative flex items-center justify-end ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
                 data-timeline-item
                 data-index={index}
               >
@@ -116,7 +116,7 @@ const Timeline: React.FC = () => {
                 ></div>
 
                 <div
-                  className={`md:w-5/12 w-5/6 md:${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6 text-left'} pl-2 text-left transition-all duration-700 ease-out ${
+                  className={`w-5/6 pl-2 text-left md:w-5/12 ${index % 2 === 0 ? 'md:pr-6 md:text-right' : 'md:pl-6 md:text-left'} transition-all duration-700 ease-out ${
                     visibleItems.has(index)
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-8'
@@ -124,7 +124,7 @@ const Timeline: React.FC = () => {
                 >
                   <Card interactive>
                     <div
-                      className={`flex items-center gap-1 mb-1 md:${index % 2 === 0 ? 'justify-end' : 'justify-start'} justify-start`}
+                      className={`flex items-center gap-1 mb-1 justify-start ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}
                     >
                       <Typography
                         variant="body"
@@ -153,7 +153,7 @@ const Timeline: React.FC = () => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`hover:underline text-sm mb-2 flex items-center gap-1 md:${index % 2 === 0 ? 'justify-end' : 'justify-start'} justify-start`}
+                      className={`hover:underline text-sm mb-2 flex items-center gap-1 justify-start ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}
                     >
                       <Typography variant="body-bold" className="text-sm">
                         {item.title}
@@ -161,14 +161,14 @@ const Timeline: React.FC = () => {
                       <Icon name="external-link" size="sm" />
                     </a>
                     <div
-                      className={`mb-2 md:${index % 2 === 0 ? 'text-right' : 'text-left'} text-left`}
+                      className={`mb-2 text-left ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                     >
                       <Tag size="sm">{item.projectType}</Tag>
                     </div>
                     <Typography
                       variant="body"
                       emphasis="medium"
-                      className={`text-xs md:${index % 2 === 0 ? 'text-right' : 'text-left'} text-left`}
+                      className={`text-xs text-left ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                     >
                       {item.description}
                     </Typography>
