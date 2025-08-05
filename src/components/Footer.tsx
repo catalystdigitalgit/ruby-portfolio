@@ -101,14 +101,15 @@ const Footer: React.FC = () => {
               <Typography variant="heading-2" className="mb-4">
                 Let's Work Together
               </Typography>
-              <Typography variant="body" emphasis="medium" className="mb-6">
-                Keen to work on a socially-conscious AI project.
-              </Typography>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                    <Icon name="mail" size="md" className="text-white" />
+                  <div className="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+                    <Icon
+                      name="mail"
+                      size="md"
+                      className="text-neutral-600 dark:text-neutral-400"
+                    />
                   </div>
                   <div>
                     <Typography variant="body-bold" className="text-sm">
@@ -130,8 +131,12 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center">
-                    <Icon name="github-si" size="md" className="text-white" />
+                  <div className="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+                    <Icon
+                      name="github-si"
+                      size="md"
+                      className="text-neutral-600 dark:text-neutral-400"
+                    />
                   </div>
                   <div>
                     <Typography variant="body-bold" className="text-sm">
@@ -153,8 +158,12 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                    <Icon name="linkedin" size="md" className="text-white" />
+                  <div className="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center">
+                    <Icon
+                      name="linkedin"
+                      size="md"
+                      className="text-neutral-600 dark:text-neutral-400"
+                    />
                   </div>
                   <div>
                     <Typography variant="body-bold" className="text-sm">

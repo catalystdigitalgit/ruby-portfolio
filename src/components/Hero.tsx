@@ -3,6 +3,16 @@ import Typography from './Typography';
 import Button from './Button';
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-cover bg-center sm:bg-bottom bg-no-repeat transition-all duration-300 bg-[url('/images/desktop-bg-light.svg')] dark:bg-[url('/images/desktop-bg-dark.svg')]">
       <div className="max-w-3xl mx-auto px-4 text-center -mt-32 lg:-mt-60 space-y-6">
@@ -69,6 +79,7 @@ const Hero = () => {
             icon="mail"
             size="sm"
             className="sm:!px-6 sm:!py-3 sm:!text-base"
+            onClick={scrollToContact}
           >
             Let's Chat
           </Button>

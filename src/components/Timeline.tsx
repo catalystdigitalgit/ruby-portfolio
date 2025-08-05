@@ -11,7 +11,7 @@ const Timeline: React.FC = () => {
 
   const timelineItems = [
     {
-      date: 'Jan 2024 - Present',
+      date: 'Jan 2025 - Present',
       title: 'Frontend Developer at GEEIQ',
       projectType: 'Full-time',
       description:
@@ -21,15 +21,15 @@ const Timeline: React.FC = () => {
         "Leaving GEEIQ earlier than expected to find a fully remote role that allows me to work from New Zealand in order to support my mum as she navigates early-stage Alzheimer's.",
     },
     {
-      date: 'Sep 2023',
+      date: 'Dec 2024',
       title: 'Launched Catalyst Digital',
       projectType: 'Personal Project',
       description:
-        'Founded digital agency specializing in modern web applications and user experience design for startups and enterprises.',
+        'Founded digital agency specializing in modern web applications and user experience design for local businesses.',
       link: 'https://catalystdigital.uk',
     },
     {
-      date: 'Mar 2022 - Dec 2023',
+      date: 'Sep 2022 - Nov 2024',
       title: 'Frontend Developer at 3S Money',
       projectType: 'Full-time',
       description:
@@ -37,7 +37,7 @@ const Timeline: React.FC = () => {
       link: 'https://3s.money/',
     },
     {
-      date: 'Nov 2021',
+      date: 'Mar 2023',
       title: 'Launched Dazy Chain',
       projectType: 'Personal Project',
       description:
